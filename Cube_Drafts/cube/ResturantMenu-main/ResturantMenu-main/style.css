@@ -1,0 +1,64 @@
+body {
+    min-width: 100%;
+    min-height: 100%;
+}
+.restaurant-menu-container {
+    background-image: url(background1.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    min-height: 1600px;
+    color: #fff;
+    justify-content: center;
+}
+.menu {
+    margin-top: 16em;
+    width: 70%;
+}
+.menu-title {
+    text-align: center;
+    margin-bottom: 30px
+}
+.menu-name{
+    text-align: left;
+    padding-left: 20px;
+}
+.menu-price { 
+    text-align: right;
+}
+span.price {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 7px;
+    background-color: #ccc;
+    color: #000;
+}
+.table tr {
+    height: 70px;
+}
+td.group-name {
+    font-size: 20px;
+    font-weight: bold;
+}
+.subtext {
+    font-weight: bolder;
+}
+.menu-item-name {
+    font-size: 17px;
+}
+.table {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 30px;
+}
+.additional-text {
+    border: 1px solid tomato;
+    padding: 2px;
+    border-radius: 5px;
+    background-color: tomato;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 5px;
+    font-size: 13px;
+}
