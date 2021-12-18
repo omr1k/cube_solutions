@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Restaurant Menu Generator</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <link rel="stylesheet" href="style.css" >
+</head>
+    <body>
+        <div class="jumbotron text-center">
+            <h1>Restaurant Menu Creator</h1>
+            <p>Create your own restaurant menu!</p> 
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#manageMenuModal" onclick="prepareData()">
+                MANAGE MENU!
+            </button>
+            <!-- Manage Menu Modal -->
+            <div class="modal fade" id="manageMenuModal" tabindex="-1" role="dialog" aria-labelledby="manageMenuModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <div class="form-group" style="padding-top: 10px; text-align: left">
+                                <input type="text" class="form-control" id="menuTitle"  onkeyup="updateTitle()" placeholder="Enter Menu Title" aria-describedby="menuTitleHelp">
+                                <small id="menuTitleHelp" class="form-text text-muted">The menu title.</small>
+                            </div>
+                        </div>
+                        <div class="modal-body" id="dataBody" style="text-align: left;padding: 10px">
+    
+                            <div class="form-group">
+                                <label for="menuGroups">Select Menu Group</label>
+                                <select class="form-control" id="menuGroups" onchange="handleSelectNewGroup(this)">
+                                    <option selected disabled>Please Select</option>
+                                    <option value="newGroup">New Group</option>
+                                </select>
+                            </div>
+                            <div id="newGroupView" style="display: none;">
+                                <div class="form-group">
+                                    <label for="newGroupText">Enter Group Title</label>
+                                    <input type="text" class="form-control" id="newGroupText" placeholder="Enter Group Title">
+                                </div>
+                                <button type="button" class="btn btn-success col-12" style="width: 100%" onclick="addNewGroup()">Add</button>
+                            </div>
+                            <div class="form-group" id="menuItemView" style="display: none;">
+                                <div class="form-group">
+                                    <label for="newGroupText">Edit Group Name</label>
+                                    <input type="text" class="form-control" id="newGroupName" placeholder="Enter New Group Name">                                    
+                                </div>
+                                <div class="container form-group">
+                                    <button type="button" class="btn btn-success col-12" style="width: 30%" onclick="editGroupName()">Update</button>
+                                    <button type="button" class="btn btn-danger col-12" style="width: 30%" onclick="deleteGroup()">Delete</button>
+                                </div>
+                                <label for="menuItems">Select Menu Item</label>
+                                <select class="form-control" id="menuItems" onchange="handleSelectNewItem(this)">
+                                    <option selected disabled>Please Select</option>
+                                    <option value="newItem">New Item</option>
+                                </select>
+                            </div>
+                            <div id="newItemView" style="display: none;">
+                                <div class="form-group">
+                                    <label for="newItemText">Enter Item Name</label>
+                                    <input type="text" class="form-control" id="newItemText" placeholder="Enter Menu Title">
+                                </div>
+                                <div class="form-group">
+                                    <label for="itemPrice">Enter Item Price</label>
+                                    <input type="text" class="form-control" id="itemPrice" placeholder="Enter Menu Item Price">
+                                </div>
+                                <div class="form-group">
+                                    <label for="newItemDescription">Enter Item Description</label>
+                                    <textarea class="form-control" id="newItemDescription" rows="2"></textarea>
+                                </div>
+                                <button type="button" class="btn btn-success col-12" style="width: 100%" onclick="addNewItem()">Add</button>
+                            </div>
+                            <div id="editItemView" style="display: none;">
+                                <div class="form-group">
+                                    <label for="editItemText">Update Item Name</label>
+                                    <input type="text" class="form-control" id="editItemText" placeholder="Update Item Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="editItemPrice">Update Item Price</label>
+                                    <input type="text" class="form-control" id="editItemPrice" placeholder="Enter Menu Item Price">
+                                </div>
+                                <div class="form-group">
+                                    <label for="editItemDescription">Update Item Description</label>
+                                    <textarea class="form-control" id="editItemDescription" rows="2"></textarea>
+                                </div>
+                                <div class="container">
+                                    <button type="button" class="btn btn-success col-12" style="width: 30%" onclick="editItem()">Update</button>
+                                    <button type="button" class="btn btn-danger col-12" style="width: 30%" onclick="deleteItem()">Delete</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal" onclick="saveChanges()">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container restaurant-menu-container">
+            <div class="menu">
+                <div class="menu-title">
+                    <h1 id="resMenuTitle">MENU</h1>
+                </div>
+                <div id="menuTable">
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

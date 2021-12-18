@@ -1,0 +1,5 @@
+For Problem (0 & 1 & 2)
+The IDE used is (https://www.onlinegdb.com/online_java_compiler) which is online chrome based IDE
+
+
+I have Already share solutions repository link but in the form you Required the zip file also
