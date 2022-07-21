@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Hello!</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="https://kit.fontawesome.com/99b1329962.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+
+
+       
+
+        <div class='title' >Chef Shaheen - Live broadcast Noor Dubai Radio</div>
+        <div class='title'>لقاء شيف شاهين بث مباشر اذاعة نور دبي</div>
+
+        <div class='parent'>
+            <div class='child'>Noor Dubai Radio 93.9 MHZ</div>
+            <button id="btn1" onclick="SawaCh()" >Play - تشغيل</button>
+          </div>
+
+            <audio id="audioT1">
+                <source src="http://radio.garden/api/ara/content/listen/24DYFFOp/channel.mp3" type="audio/mpeg">
+            </audio>
+
+    </body>
+    <script> 
+        function SawaCh(){
+            var audioT = document.getElementById('audioT1');
+            if(audioT.paused){
+                audioT.play();
+                btn1.innerHTML = 'Pause - ايقاف'
+            }else{
+                audioT.pause();
+                btn1.innerHTML = 'Play - تشغيل'
+            }
+        }
+        </script>
+</html>

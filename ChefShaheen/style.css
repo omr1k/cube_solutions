@@ -1,0 +1,26 @@
+body {
+	background-color: #800080;
+}
+
+
+
+.title {
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-size: larger;
+  }
+.parent {
+    border: 1px solid rgb(255, 255, 255);
+    margin: 1rem;
+    padding: 2rem 2rem;
+    text-align: center;
+    border-radius: 15pt;
+  }
+  .child {
+    display: inline-block;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    color: rgb(255, 255, 255);
+  }
